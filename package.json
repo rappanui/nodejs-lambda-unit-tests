@@ -1,0 +1,22 @@
+{
+  "name": "nodejs-lambda-unit-tests",
+  "version": "1.0.0",
+  "description": "An example of unit tests for AWS Lambda Functions with Lambda Layers using Proxyquire",
+  "scripts": {
+    "test": "mocha src/tests"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rappanui/nodejs-lambda-unit-tests.git"
+  },
+  "keywords": [],
+  "author": "Raphael Silva",
+  "license": "ISC",
+  "dependencies": {
+    "serverless-mocha-plugin": "^1.12.0",
+    "serverless-plugin-optimize": "*"
+  },
+  "devDependencies": {
+    "proxyquire": "^2.1.3"
+  }
+}

@@ -1,0 +1,24 @@
+getAddressInfo:
+  name: ${self:provider.stage}-${self:service}-getAddressInfo
+  description: Get Address Information by Postal Code
+  handler: src/functions/getAddressInfo/handler.getAddressInfo
+  environment: 
+    CORREIOS_API_URL: https://viacep.com.br/ws/${cep}/json/
+  layers:     
+    - ${cf:nodejs-layers-${self:provider.stage}.AxiosLambdaLayerQualifiedArn}
+    - ${cf:nodejs-layers-${self:provider.stage}.MomentLambdaLayerQualifiedArn}
+  vpc:
+    securityGroupIds:
+      - ${cf:${self:provider.stage}-network.LambdaSecurityGroup}
+    subnetIds:
+      - ${cf:${self:provider.stage}-network.PrivateSubnetA}
+      - ${cf:${self:provider.stage}-network.PrivateSubnetB}
+  events:
+    - http:
+        path: /cep/{cep}
+        method: get
+        cors: true
+        request:
+          parameters:
+            paths:
+              cep: false

@@ -4,17 +4,17 @@
 ---
 ## Indíce de conteúdo  
 
-1. [Introdução](#markdown-1-header-introducao)
-2. [Instalação](#markdown-2-header-instalacao)
-3. [Testes Unitarios](#markdown-3-header-testes-unitarios)
-   - [Serverless Mocha Plugin](#markdown-header-serverless-mocha-plugin)
-   - [Proxyquire](#markdown-header-proxyquire)
-     - [Stub via objeto mock](#markdown-header-objeto-mock)
-     - [Stub via classe mock](#markdown-header-classe-mock)
+1. [Introdução](#Introduo_16)
+2. [Instalação](#Instalao_21)
+3. [Testes Unitarios](#Testes_unitrios_30)
+   - [Serverless Mocha Plugin](#Serverless_Mocha_Plugin_33)
+   - [Proxyquire](#Proxyquire_35)
+     - [Stub via objeto mock](#Stub_via_objeto_mock_37)
+     - [Stub via classe mock](#Stub_via_classe_mock_39)
 
 ---
 
-# **1. Introdução**
+# Introdução
 Este projeto contém uma stack em [Serverless Framework](https://www.serverless.com/), com AWS Lambda Functions utilizando Lambda Layers e possui testes unitários feitos com [Serverless Mocha Plugin](https://www.serverless.com/plugins/serverless-mocha-plugin/) e [Proxyquire](https://www.npmjs.com/package/proxyquire) para realizar os stubs das layers.
 Esse projeto foi criado com o objetivo de servir como base para um [artigo no Medium](https://rpsilva.medium.com/como-desenvolver-testes-em-aws-lambda-com-layers-em-node-js-7a14796b2cbc)
 que ensina como criar testes unitários para Lambda Functions que utilizam lambda layers, e também expõe um endpoint ``[GET] /cep/{cep}`` atraves do AWS API Gateway que dá start em uma lambda que, através de um CEP, busca os dados do endereço e os retorna juntamente de dados do usuário ou sistema que fez a requisição. 
